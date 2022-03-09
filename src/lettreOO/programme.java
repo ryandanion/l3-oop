@@ -29,14 +29,16 @@ public class programme {
 					Caractere a = new Ponctuation(caractere);
 					m.addCaractere(a);
 					p.addMot(m);
-					
-					if(caractere != "!" && caractere != "." && caractere != "?") {
+					m=new Mot();
+			
+							
+					if(caractere.equals("!") || caractere.equals(".") || caractere.equals("?")) {
 						l.addPhrase(p);
 						p = new Phrase();
 					}
 				}
 			}else {
-				c = new Caractere(" ");
+				c = new Ponctuation(" ");
 				m.addCaractere(c);
 				p.addMot(m);
 				m = new Mot();
