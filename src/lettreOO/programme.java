@@ -10,7 +10,13 @@ public class programme {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		Scanner sc = new Scanner(System.in);
+		ArrayObjectSimple array = new ArrayObjectSimple(10);
+		array.ajouteElement(1, "okok");
+		
+		array.ajouteElement(6, 3);
+		System.out.println(array.toString());
+		
+	/*	Scanner sc = new Scanner(System.in);
 		Boolean sortie = false;
 		Boolean intermediaire = false;
 		Mot m = new Mot();
@@ -56,7 +62,7 @@ public class programme {
 			}
 		} 
 		
-		System.out.println(l.getLettre());
+		System.out.println(l.getLettre()); */
 	} 
 	
 }

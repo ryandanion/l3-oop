@@ -19,7 +19,6 @@ public class Properties {
 		
 		 this.properties = new HashMap<>();
 		
-		
 		try (FileInputStream inputStream = new FileInputStream("C:\\Users\\Raphaël\\Desktop\\properties-"+Configuration.getLangue()+".csv")) {
 			Scanner obj = new Scanner(inputStream);
 
