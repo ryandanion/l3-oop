@@ -1,6 +1,6 @@
 package lettreOO;
 
-public class ArrayObjectSimple {
+public class ArrayObjectSimple{
 	
 	private Object[] array;
 	private Object first;

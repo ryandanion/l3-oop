@@ -10,10 +10,10 @@ public class programme {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		ArrayObjectSimple array = new ArrayObjectSimple(10);
-		array.ajouteElement(1, "okok");
+		ArrayObjectSimple2<Integer> array = new ArrayObjectSimple2<Integer>(10);
+		array.ajouteElement(1, 3);
 		
-		array.ajouteElement(6, 3);
+		array.ajouteElement(6, 2);
 		System.out.println(array.toString());
 		
 	/*	Scanner sc = new Scanner(System.in);
