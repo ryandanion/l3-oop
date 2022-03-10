@@ -1,10 +1,14 @@
 package lettreOO;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+
+import Utils.Properties;
 
 public class programme {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		
 		Scanner sc = new Scanner(System.in);
 		Boolean sortie = false;
@@ -15,7 +19,11 @@ public class programme {
 		Lettre l = new Lettre();
 		
 		
-	
+		
+		
+		Properties properties = new Properties("en");
+		System.out.println(properties.getValeur("titre"));
+		System.out.println(properties.getValeur("consigne"));
 		
 		while(sortie != true) {
 			String caractere = sc.nextLine();
@@ -46,9 +54,9 @@ public class programme {
 					sortie = true;
 				intermediaire=true;
 			}
-		}
+		} 
 		
 		System.out.println(l.getLettre());
-	}
+	} 
 	
 }
