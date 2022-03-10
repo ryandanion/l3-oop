@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import Configuration.Configuration;
+
 public class Properties {
 
 
@@ -18,7 +20,7 @@ public class Properties {
 		 this.properties = new HashMap<>();
 		
 		
-		try (FileInputStream inputStream = new FileInputStream("C:\\Users\\Raphaël\\Desktop\\properties-"+langue+".csv")) {
+		try (FileInputStream inputStream = new FileInputStream("C:\\Users\\Raphaël\\Desktop\\properties-"+Configuration.getLangue()+".csv")) {
 			Scanner obj = new Scanner(inputStream);
 
 			while (obj.hasNextLine()) {
