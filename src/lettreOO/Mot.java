@@ -1,25 +1,21 @@
 package lettreOO;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Mot {
-	ArrayList<Caractere> list;
+public class Mot extends LettreComposite{
 	
-	public Mot() {
-		this.list  = new ArrayList<Caractere>();
-	}
+	  public Mot(ArrayList<Caractere> mot) {
+		  for(Caractere c : mot) {
+			  this.add(c);
+		  }
+		  
+		  }
 	
-	public String getMot() {
-		String mot = "";
-		for(Caractere c : list) {
-			mot+=c.getCaractere();
-		}
-		
-		return mot;
-	}
-	
-	public void addCaractere(Caractere caractere) {
-		list.add(caractere);
-	}
+
+		  @Override
+		  protected String printThisBefore() {
+		    return " ";
+		  }
 
 }

@@ -2,26 +2,18 @@ package lettreOO;
 
 import java.util.ArrayList;
 
-public class Phrase {
+public class Phrase extends LettreComposite{
 	
-	ArrayList<Mot> list;
-	
-	public Phrase() {
-		list = new ArrayList<Mot>();
-	}
-	
-	public String getPhrase() {
-		String phrase = "";
-		for(Mot m : list) {
-			phrase+=m.getMot();
+	public Phrase(ArrayList<Mot> mot) {
+		for(Mot m : mot) {
+			 this.add(m);
 		}
-		
-		return phrase;
-	}
-	
-	public void addMot(Mot mot) {
-		list.add(mot);
-	}
+	   
+	  }
 
+	  @Override
+	  protected String printThisAfter() {
+	    return ".";
+	  }
 
 }

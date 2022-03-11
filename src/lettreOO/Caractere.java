@@ -1,14 +1,13 @@
 package lettreOO;
 
-public class Caractere {
-
-	private final String caractere;
+public class Caractere extends LettreComposite{
+	private final char caractere;
 	
-	public Caractere(String caractere) {
+	public  Caractere(char caractere) {
 		this.caractere = caractere;
 	}
 	
-	public String getCaractere() {
-		return this.caractere;
+	public String printThisBefore() {
+		return Character.toString(caractere);
 	}
 }
