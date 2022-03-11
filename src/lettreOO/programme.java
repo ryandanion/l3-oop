@@ -32,7 +32,7 @@ public class programme {
 				if(caractere.equals(".") || caractere.equals("!") || caractere.equals("?")) {
 					listMot.add(messenger.getMot(listCaractere));
 					listCaractere.clear();
-					listPhrase.add(messenger.getPhrase(listMot));
+					listPhrase.add(messenger.getPhrase(listMot,caractere.charAt(0)));
 					listMot.clear();
 				}else {
 					listCaractere.add(messenger.getCaractere(caractere.charAt(0)));
@@ -43,8 +43,10 @@ public class programme {
 				listMot.add(messenger.getMot(listCaractere));
 	
 				listCaractere.clear();
-				if(intermediaire)
+				
+				if(intermediaire) {
 					sortie = true;
+				}
 				intermediaire=true;
 			}	
 		}
