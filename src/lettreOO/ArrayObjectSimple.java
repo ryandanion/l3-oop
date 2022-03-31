@@ -1,6 +1,8 @@
 package lettreOO;
 
-public class ArrayObjectSimple{
+import java.io.Serializable;
+
+public class ArrayObjectSimple implements Serializable{
 	
 	private Object[] array;
 	private Object first;

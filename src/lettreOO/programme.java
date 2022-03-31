@@ -1,4 +1,7 @@
-package lettreOO;
+///////////§§§§!!§§§§§§§§ CE PROGRAMME N'EST PAS LE BON, LE BON SE TROUVE DANS testSocket ///////////§§§§!!§§§§§§§§
+
+
+/*package lettreOO;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -32,7 +35,7 @@ public class programme {
 				if(caractere.equals(".") || caractere.equals("!") || caractere.equals("?")) {
 					listMot.add(messenger.getMot(listCaractere));
 					listCaractere.clear();
-					listPhrase.add(messenger.getPhrase(listMot));
+					listPhrase.add(messenger.getPhrase(listMot,caractere.charAt(0)));
 					listMot.clear();
 				}else {
 					listCaractere.add(messenger.getCaractere(caractere.charAt(0)));
@@ -43,8 +46,11 @@ public class programme {
 				listMot.add(messenger.getMot(listCaractere));
 	
 				listCaractere.clear();
-				if(intermediaire)
+				
+				if(intermediaire) {
+					listPhrase.add(messenger.getPhrase(listMot,' '));
 					sortie = true;
+				}
 				intermediaire=true;
 			}	
 		}
@@ -62,4 +68,4 @@ public class programme {
 		
 	} 
 	
-}
+} */

@@ -18,8 +18,9 @@ public class Properties {
 	public Properties(String langue) {
 		
 		 this.properties = new HashMap<>();
-		
-		try (FileInputStream inputStream = new FileInputStream("C:\\Users\\Raphaël\\Desktop\\properties-"+Configuration.getLangue()+".csv")) {
+		 String pwd = System.getProperty("user.dir");
+	
+		try (FileInputStream inputStream = new FileInputStream(pwd+"/properties-"+Configuration.getLangue()+".csv")) {
 			Scanner obj = new Scanner(inputStream);
 
 			while (obj.hasNextLine()) {

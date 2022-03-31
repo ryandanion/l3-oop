@@ -1,8 +1,9 @@
 package lettreOO;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public abstract class LettreComposite {
+public abstract class LettreComposite implements Serializable {
 	
 	private final ArrayList<LettreComposite> list = new ArrayList<LettreComposite>();
 	
@@ -29,5 +30,6 @@ public abstract class LettreComposite {
 		    return chaine;
 		  }
 	  
+
 	  
 }
