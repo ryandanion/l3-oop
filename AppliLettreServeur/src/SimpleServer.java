@@ -55,7 +55,7 @@ public class SimpleServer {
             
    			if(sortie != true) {
    				
-   			if(line != "QUIT") {
+   			if(line.length() < 2) {
    				line = ControllerServeur.traiterCaractereRecuperer(line);
    			}
    			else {
