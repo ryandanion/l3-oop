@@ -1,16 +1,12 @@
-package testSocket;
 
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import lettreOO.Caractere;
-import lettreOO.LettreComposite;
-import lettreOO.Mot;
-import lettreOO.Phrase;
 
-public class SimpleClientDemo {
+
+public class SimpleClient {
 	
 	static Socket socketOfClient = null;
 	static ObjectOutputStream  os = null;
@@ -46,44 +42,9 @@ public class SimpleClientDemo {
  	   Scanner sc = new Scanner(System.in);
  	   System.out.println("Caractère client en attente :");
  	   String caractere = sc.nextLine();
- 	  Caractere c;
- 	  
 
- 		  if(!caractere.equals("QUIT")) {
- 			 if(caractere.length() != 0) {
- 		 		  c = new Caractere(caractere.charAt(0));
-
- 		 	  }else {
- 		 		  c = new Caractere(' ');
- 		 	  }
- 			 
- 			 os.writeObject(c);
- 		 	   
- 	        os.flush();  
- 		  }else {
- 			 Caractere q = new Caractere('Q');
- 			 Caractere u = new Caractere('U');
- 			 Caractere i = new Caractere('I');
- 			 Caractere t = new Caractere('T');
- 			 
- 			 ArrayList<Caractere> list = new ArrayList<Caractere>();
- 			 list.add(q);
- 			 list.add(u);
- 			 list.add(i);
- 			 list.add(t);
- 			 
- 			 Mot m = new Mot(list);
- 			 
- 			 os.writeObject(m);
- 		 	   
- 	        os.flush();  
- 			 
- 		  }
- 	 
- 	  
- 	  
- 	  
-		
+ 		 os.writeObject(caractere);
+ 		 os.flush();
  	  
 		}else {
 			System.exit(0);
@@ -107,27 +68,9 @@ public class SimpleClientDemo {
            // Input stream at Client (Receive data from the server).
        
     	   is = new ObjectInputStream(socketOfClient.getInputStream());
-    	   Object responseLine = (Object) is.readObject();
+    	   String responseLine = (String) is.readObject();
+    	   Interface.traiterReponseServeur(responseLine);
     	   
-    	   if(responseLine instanceof LettreComposite) {
-    		   System.out.println("Le serveur à reçu : "+((LettreComposite)responseLine).print());
-    	   }else {
-    	
-    			String s = "";
-    			
-    			for(Phrase p : (ArrayList<Phrase>)responseLine ) {
-    				s += p.print();
-    			}
-    			
-    			System.out.println("Saisie terminée : "+s);
-    			continuer = false;
-    		
-    		  
-    	   }
-    	   
-    	  
-     
-
        } catch (UnknownHostException e) {
            System.err.println("Trying to connect to unknown host: " + e);
        } catch (IOException e) {

@@ -1,4 +1,4 @@
-package lettreOO;
+
 
 public class Caractere extends LettreComposite{
 	private final char caractere;
