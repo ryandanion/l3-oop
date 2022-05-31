@@ -35,7 +35,7 @@ public class ControllerServeur {
    				s += p.print();
    			}
    			
-   			return s;  
+   			return s.trim();  
 
 	}
 }

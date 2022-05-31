@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AppliLettreClient/AppliLettreClient.iml" filepath="$PROJECT_DIR$/AppliLettreClient/AppliLettreClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AppliLettreServeur/AppliLettreServeur.iml" filepath="$PROJECT_DIR$/AppliLettreServeur/AppliLettreServeur.iml" />
+    </modules>
+  </component>
+</project>

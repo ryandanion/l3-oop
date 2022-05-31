@@ -16,21 +16,9 @@ class ControllerServeurTest {
 		ControllerServeur.traiterCaractereRecuperer(".");
 		org.junit.jupiter.api.Assertions.assertEquals(" ab  c.", ControllerServeur.listPhrase.get(0).print());
 	}
-	
-	void testTraiterFin() {
-		ControllerServeur.traiterCaractereRecuperer("a");
-		ControllerServeur.traiterCaractereRecuperer("b");
-		ControllerServeur.traiterCaractereRecuperer(" ");
-		ControllerServeur.traiterCaractereRecuperer(" ");
-		ControllerServeur.traiterCaractereRecuperer("c");
-		ControllerServeur.traiterCaractereRecuperer(".");
-		ControllerServeur.traiterCaractereRecuperer("c");
-		ControllerServeur.traiterCaractereRecuperer("d");
-		ControllerServeur.traiterCaractereRecuperer("e");
-		
-		org.junit.jupiter.api.Assertions.assertEquals(" ab  c.cde", ControllerServeur.traiterFin());
-		
-		
+	@Test
+	void testTraiterFin() {		
+		org.junit.jupiter.api.Assertions.assertEquals("ab  c.", ControllerServeur.traiterFin());	
 	}
 
 }
