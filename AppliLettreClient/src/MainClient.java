@@ -5,11 +5,9 @@ public class MainClient {
 	public static void main(String args[]) throws IOException, ClassNotFoundException {
 		SimpleClient.init();
 		while(SimpleClient.continuer) {
-			SimpleClient.envoiMessage();
-			SimpleClient.call();
+			ControllerClient.envoyerCaractere();
+			ControllerClient.getReponseClient();
 		}
-		
 		SimpleClient.socketOfClient.close();
-
 		}
 }

@@ -24,12 +24,9 @@ public class SimpleServer {
 	
 	public static void init() throws IOException {
 
-	       try {
+
 	           listener = new ServerSocket(9999);
-	       } catch (IOException e) {
-	           System.out.println(e);
-	           System.exit(1);
-	       }
+
 	       
 	       System.out.println("Server is waiting to accept user...");
 
@@ -48,15 +45,13 @@ public class SimpleServer {
 		  is = new ObjectInputStream(socketOfServer.getInputStream());
 	         os = new ObjectOutputStream(socketOfServer.getOutputStream());	
 
-
-       try {
     	   
              String line = (String) is.readObject().toString();
             
    	
    				
    			if(line.length() < 2) {
-   				line = ControllerServeur.traiterCaractereRecuperer(line);
+   				ControllerServeur.traiterCaractereRecuperer(line);
    			}
    			else {
    			 line = ControllerServeur.traiterFin();
@@ -66,10 +61,5 @@ public class SimpleServer {
    			os.writeObject(line);
             os.flush();  
             
-           
-       } catch (IOException e) {
-           System.out.println(e);
-           e.printStackTrace();
-       }
    }
 }

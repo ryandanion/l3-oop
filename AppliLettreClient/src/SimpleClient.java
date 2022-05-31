@@ -25,21 +25,18 @@ public class SimpleClient {
 	           
 	           
 	       } catch (UnknownHostException e) {
-	           System.err.println("Don't know about host " + serverHost);
+	           System.err.println("Hôte inconnu " + serverHost);
 	           return;
 	       } catch (IOException e) {
-	           System.err.println("Couldn't get I/O for the connection to " + serverHost);
+	           System.err.println("IOException " + serverHost);
 	           return;
 	       }
 	}
 	
 	
-	public static void envoiMessage() throws IOException {			
+	public static void envoiMessage(String caractere) throws IOException {			
 		 // Write data to the output stream of the Client Socket.
 		os = new ObjectOutputStream(socketOfClient.getOutputStream());
-				  Scanner sc = new Scanner(System.in);
-			 	   System.out.println("Caractère client en attente :");
-			 	   String caractere = sc.nextLine();
 
 			 		 os.writeObject(caractere);
 			 		 os.flush();
@@ -52,12 +49,12 @@ public class SimpleClient {
        try {
     	   is = new ObjectInputStream(socketOfClient.getInputStream());
     	   String responseLine = (String) is.readObject();
-    	   ControllerClient.AfficherReponseServeur(responseLine);
-    	   continuer = ControllerClient.VerifierReponseServeur(responseLine);
+    	   ControllerClient.afficherReponseServeur(responseLine);
+    	   continuer = ControllerClient.verifierReponseServeur(responseLine);
  
     	   
        } catch (UnknownHostException e) {
-           System.err.println("Trying to connect to unknown host: " + e);
+           System.err.println("Hôte inconnu " + e);
        } catch (IOException e) {
            System.err.println("IOException:  " + e);
        }
