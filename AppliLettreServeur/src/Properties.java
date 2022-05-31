@@ -12,12 +12,12 @@ public class Properties {
 
 	 private final Map<String, String> properties; 
 
-	public Properties(String langue) {
+	public Properties() {
 		
 		 this.properties = new HashMap<>();
 		 String pwd = System.getProperty("user.dir");
 	
-		try (FileInputStream inputStream = new FileInputStream(pwd+"/properties-"+Configuration.getLangue()+".csv")) {
+		try (FileInputStream inputStream = new FileInputStream(pwd+"AppliLettreServeur/properties-"+Configuration.getLangue()+".csv")) {
 			Scanner obj = new Scanner(inputStream);
 
 			while (obj.hasNextLine()) {
@@ -26,7 +26,6 @@ public class Properties {
 				properties.put(list[0], list[1]);
 			}
 			
-			inputStream.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
