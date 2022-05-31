@@ -17,3 +17,9 @@ flowchart LR
     cs -- Retour String  --> cc
     cc -- Retour String --> i 
 ```
+
+## Model Server
+![](modelServer.png)
+
+## Model Client
+![](modelClient.png)
