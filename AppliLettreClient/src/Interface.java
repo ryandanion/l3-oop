@@ -5,8 +5,4 @@ public class Interface {
 		System.out.println(message);
 	}
 	
-	public static void traiterReponseServeur(String message) {
-		Interface.afficherMessage("Réponse du serveur : "+message);
-	}
-
 }

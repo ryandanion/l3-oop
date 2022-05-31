@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class SimpleClient {
 	
 	static Socket socketOfClient = null;
-	static ObjectOutputStream  os = null;
+	static ObjectOutputStream os = null;
 	static ObjectInputStream is = null;
 	static boolean continuer = true;
 	
@@ -34,22 +34,15 @@ public class SimpleClient {
 	}
 	
 	
-	public static void envoiMessage() throws IOException {
-		if(continuer) {
-			
+	public static void envoiMessage() throws IOException {			
 		 // Write data to the output stream of the Client Socket.
 		os = new ObjectOutputStream(socketOfClient.getOutputStream());
- 	   Scanner sc = new Scanner(System.in);
- 	   System.out.println("Caractère client en attente :");
- 	   String caractere = sc.nextLine();
+				  Scanner sc = new Scanner(System.in);
+			 	   System.out.println("Caractère client en attente :");
+			 	   String caractere = sc.nextLine();
 
- 		 os.writeObject(caractere);
- 		 os.flush();
- 	  
-		}else {
-			System.exit(0);
-		}
-     
+			 		 os.writeObject(caractere);
+			 		 os.flush();
 	}
 
 	
@@ -57,19 +50,11 @@ public class SimpleClient {
 	public static void call() throws ClassNotFoundException {
 
        try {
-           
-           // Read data sent from the server.
-           // By reading the input stream of the Client Socket.
-    	   
-    	   
-           // Create output stream at the client (to send data to the server)
-           
-           
-           // Input stream at Client (Receive data from the server).
-       
     	   is = new ObjectInputStream(socketOfClient.getInputStream());
     	   String responseLine = (String) is.readObject();
-    	   Interface.traiterReponseServeur(responseLine);
+    	   ControllerClient.AfficherReponseServeur(responseLine);
+    	   continuer = ControllerClient.VerifierReponseServeur(responseLine);
+ 
     	   
        } catch (UnknownHostException e) {
            System.err.println("Trying to connect to unknown host: " + e);

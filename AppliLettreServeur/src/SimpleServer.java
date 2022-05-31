@@ -18,7 +18,7 @@ public class SimpleServer {
      static ObjectInputStream is;
      static ObjectOutputStream os;
      static Socket socketOfServer = null;
-     static Boolean sortie = false;
+     public static Boolean sortie = false;
 
      
 	
@@ -53,7 +53,7 @@ public class SimpleServer {
     	   
              String line = (String) is.readObject().toString();
             
-   			if(sortie != true) {
+   	
    				
    			if(line.length() < 2) {
    				line = ControllerServeur.traiterCaractereRecuperer(line);
@@ -66,9 +66,7 @@ public class SimpleServer {
    			os.writeObject(line);
             os.flush();  
             
-   			}
-
-
+           
        } catch (IOException e) {
            System.out.println(e);
            e.printStackTrace();

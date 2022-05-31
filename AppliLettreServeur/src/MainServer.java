@@ -9,9 +9,11 @@ public class MainServer {
 		 
 	SimpleServer.init();
 	SimpleServer.acceptUser();
-	while(true) {
+	while(SimpleServer.sortie == false) {
 		SimpleServer.call();
 	}
+	
+	SimpleServer.socketOfServer.close();
 
 	}
 
