@@ -25,7 +25,7 @@ public class Properties {
 				String[] list = data.split(",");
 				properties.put(list[0], list[1]);
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
